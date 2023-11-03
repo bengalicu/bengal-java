@@ -11,7 +11,58 @@
     <version>0.0.1-SNAPSHOT</version>
     <packaging>jar</packaging>
     <name>Bengal</name>
+    <properties>
+        <!-- plugins -->
+        <maven-jar-plugin.version>3.3.0</maven-jar-plugin.version>
+        <native-maven-plugin.version>0.9.27</native-maven-plugin.version>
+    </properties>
     <build>
         <finalName>>bji</finalName>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <version>${maven-jar-plugin.version}</version>
+                <configuration>
+                    <archive>
+                        <manifest>
+                            <mainClass>icu.bengal.interpreter.BengalInterpreter</mainClass>
+                        </manifest>
+                    </archive>
+                </configuration>
+            </plugin> 
+        </plugins>
     </build>
+    <profiles>
+        <profile>
+            <id>native</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.graalvm.buildtools</groupId>
+                        <artifactId>native-maven-plugin</artifactId>
+                        <version>${native-maven-plugin.version}</version>
+                        <extensions>true</extensions>
+                        <executions>
+                            <execution>
+                                <id>build-native</id>
+                                <goals>
+                                    <goal>build</goal>
+                                </goals>
+                                <phase>package</phase>
+                            </execution>
+                        </executions>
+                        <configuration>
+                            <buildArgs>
+                                <buildArg>--no-fallback --install-exit-handlers</buildArg>
+                            </buildArgs>
+                            <fallback>false</fallback>
+                            <imageName>bji</imageName>
+                            <verbose>true</verbose>
+                        </configuration>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+    </profiles>    
 </project>
