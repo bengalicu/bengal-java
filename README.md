@@ -1,6 +1,6 @@
-# Bengal
+# Bengal Java
 
-Our expiremental language
+The Java based runtime for our expiremental language.
 
 ## Is there a language guide?
 
