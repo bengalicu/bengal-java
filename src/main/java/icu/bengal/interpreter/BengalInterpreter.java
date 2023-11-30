@@ -8,14 +8,41 @@ package icu.bengal.interpreter;
  * 
  * @author Manfred Riem (mriem@manorrock.com)
  */
-public class BengalInterpreter {
-    
+public class BengalInterpreter implements Runnable {
+
+    private void eval() {
+        throw new UnsupportedOperationException("Not supported yet.");
+    }
+
     /**
      * Main method.
      * 
      * @param arguments the arguments.
      */
     public static void main(String[] arguments) {
-        System.out.println("Bengal Interpreter");
+        BengalInterpreter interpreter = new BengalInterpreter();
+        interpreter.run();
+    }
+
+    private void print() {
+        throw new UnsupportedOperationException("Not supported yet.");
+    }
+    
+    private void prompt() {
+        throw new UnsupportedOperationException("Not supported yet.");
+    }
+    
+    private void read() {
+        throw new UnsupportedOperationException("Not supported yet.");
+    }
+
+    @Override
+    public void run() {
+        for(;;) {
+            prompt();
+            read();
+            eval();
+            print();
+        }
     }
 }
