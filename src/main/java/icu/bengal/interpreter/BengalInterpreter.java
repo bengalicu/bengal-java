@@ -29,7 +29,7 @@ public class BengalInterpreter implements Runnable {
     }
     
     private void prompt() {
-        throw new UnsupportedOperationException("Not supported yet.");
+        System.out.print("> " );
     }
     
     private void read() {
