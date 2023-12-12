@@ -18,7 +18,7 @@
         <native-maven-plugin.version>0.9.27</native-maven-plugin.version>
     </properties>
     <build>
-        <finalName>>bji</finalName>
+        <finalName>bji</finalName>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
