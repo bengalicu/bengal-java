@@ -3,12 +3,26 @@
  */
 package icu.bengal.interpreter;
 
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.LineNumberReader;
+
 /**
  * The Bengal Interpreter.
  * 
  * @author Manfred Riem (mriem@manorrock.com)
  */
 public class BengalInterpreter implements Runnable {
+    
+    /**
+     * Stores our reader.
+     */
+    private LineNumberReader reader = new LineNumberReader(new InputStreamReader(System.in));
+    
+    /**
+     * Stores our input lines.
+     */
+    private StringBuilder lines = new StringBuilder();
 
     private void eval() {
         throw new UnsupportedOperationException("Not supported yet.");
@@ -33,7 +47,14 @@ public class BengalInterpreter implements Runnable {
     }
     
     private void read() {
-        throw new UnsupportedOperationException("Not supported yet.");
+        try {
+            String line = reader.readLine();
+            while(line != null) {
+                lines.append(line).append("\n");
+                line = reader.readLine();
+            }
+        } catch (IOException ioe) {
+        }
     }
 
     @Override
