@@ -13,6 +13,16 @@ import java.io.LineNumberReader;
  * @author Manfred Riem (mriem@manorrock.com)
  */
 public class BengalInterpreter implements Runnable {
+    
+    /**
+     * Stores our reader.
+     */
+    private LineNumberReader reader = new LineNumberReader(new InputStreamReader(System.in));
+    
+    /**
+     * Stores our input lines.
+     */
+    private StringBuilder lines = new StringBuilder();
 
     /**
      * Stores our reader.
@@ -55,7 +65,7 @@ public class BengalInterpreter implements Runnable {
     private void read() {
         try {
             String line = reader.readLine();
-            while (line != null) {
+            while(line != null) {
                 lines.append(line).append("\n");
                 line = reader.readLine();
             }
