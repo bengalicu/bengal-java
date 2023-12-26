@@ -16,6 +16,7 @@ public class BengalInterpreterTest {
      * Test run method.
      */
     @Test
+    @Disabled
     public void testRun() {
 //        BengalInterpreter interpreter = new BengalInterpreter();
 //        assertThrows(UnsupportedOperationException.class, () -> { interpreter.run(); });
