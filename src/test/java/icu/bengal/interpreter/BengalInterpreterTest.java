@@ -4,8 +4,6 @@
 package icu.bengal.interpreter;
 
 import org.junit.jupiter.api.Test;
-import static org.junit.jupiter.api.Assertions.*;
-import org.junit.jupiter.api.Disabled;
 
 /**
  * The JUnit tests for the Bengal interpreter.
@@ -20,7 +18,7 @@ public class BengalInterpreterTest {
     @Test
     @Disabled
     public void testRun() {
-        BengalInterpreter interpreter = new BengalInterpreter();
-        assertThrows(UnsupportedOperationException.class, () -> { interpreter.run(); });
+//        BengalInterpreter interpreter = new BengalInterpreter();
+//        assertThrows(UnsupportedOperationException.class, () -> { interpreter.run(); });
     }
 }
